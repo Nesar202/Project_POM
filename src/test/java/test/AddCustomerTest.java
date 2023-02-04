@@ -17,7 +17,8 @@ WebDriver driver;
 		driver = BrowserFactory.init();
 		
 		LoginPage loginPage = PageFactory.initElements(driver, LoginPage.class);
-		loginPage.login("demo@techfios.com", "abc123");
+		loginPage.login("demo@techfios.com","abc123");
+		
 		
 		DashboardPage dashboardPage = PageFactory.initElements(driver, DashboardPage.class);
 		dashboardPage.verifyDashboardPage("Dashboard");
@@ -30,8 +31,15 @@ WebDriver driver;
 		addCustomerPage.selectCompany("Techfios");
 		addCustomerPage.insertEmail("abc@techfios.com");
 		addCustomerPage.insertPhone("1234567");
+		addCustomerPage.insertAddress("goodwin dr");
+		addCustomerPage.insertCity("Dallas");
+		addCustomerPage.insertState("Texas");
+		addCustomerPage.insertZip("75080");
 		
-		addCustomerPage.selectCountry("Albania");	
+		addCustomerPage.selectCountry("Albania");
+		addCustomerPage.clickOnSubmit();
+		
+		BrowserFactory.tearDown();
 	}
 }
 

@@ -6,13 +6,4 @@
       <class name="test.AddCustomerTest"/>
     </classes>
   </test> <!-- Default test -->
-  <test name="Default test(failed)">
-    <classes>
-      <class name="test.AddCustomerTest">
-        <methods>
-          <include name="validCustomerShouldBeAbleToCreateCustomer"/>
-        </methods>
-      </class> <!-- test.AddCustomerTest -->
-    </classes>
-  </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

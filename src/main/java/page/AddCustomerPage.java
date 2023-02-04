@@ -21,6 +21,12 @@ WebDriver driver;
 	@FindBy(how = How.XPATH, using = "//*[@id=\"phone\"]") WebElement PHONE_ELEMENT;
 	@FindBy(how = How.XPATH, using = "//*[@id=\"email\"]") WebElement EMAIL_ELEMENT;
 	@FindBy(how = How.XPATH, using = "//*[@id=\"country\"]") WebElement COUNTRY_ELEMENT;
+	@FindBy(how = How.XPATH, using = "//input[@id='address']") WebElement ADDRESS_ELEMENT;
+	@FindBy(how = How.XPATH, using = "//input[@id='city']") WebElement CITY_ELEMENT;
+	@FindBy(how = How.XPATH, using = "//input[@id='state']") WebElement STATE_ELEMENT;
+	@FindBy(how = How.XPATH, using = "//input[@id='zip']") WebElement ZIP_ELEMENT;
+	@FindBy(how = How.XPATH, using = "//button[@id='submit']") WebElement SUBMIT_ELEMENT;
+	
 	
 	public void verifyAddContactPage(String addContactHeaderText) {
 		WebDriverWait wait = new WebDriverWait(driver, 10);
@@ -46,6 +52,21 @@ WebDriver driver;
 	
 	public void selectCountry(String country) {
 		selectFromDrowdown(COUNTRY_ELEMENT, country);
+	}
+	public void insertAddress(String address) {
+		ADDRESS_ELEMENT.sendKeys(generateRandomNum(9999)+ address);
+	}
+	public void insertCity(String city) {
+		CITY_ELEMENT.sendKeys(generateRandomNum(9999)+ city);
+	}
+	public void insertState(String state) {
+		STATE_ELEMENT.sendKeys(generateRandomNum(9999)+ state);
+	}
+	public void insertZip(String zip) {
+		ZIP_ELEMENT.sendKeys(generateRandomNum(9999)+ zip);
+	}
+	public void clickOnSubmit() {
+		SUBMIT_ELEMENT.click();
 	}
 
 }

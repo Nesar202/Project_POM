@@ -12,8 +12,8 @@ public class BrowserFactory {
 		driver = new ChromeDriver();
 		driver.manage().deleteAllCookies();
 		driver.get("https://techfios.com/billing/?ng=admin/");
-		driver.manage().window().maximize();
-	//	driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
+		//driver.manage().window().maximize();
+		driver.manage().timeouts().pageLoadTimeout(40, TimeUnit.SECONDS);
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 		return driver;
 	}
